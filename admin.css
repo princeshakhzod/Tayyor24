@@ -1,0 +1,500 @@
+/* Admin Panel Styles */
+.admin-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.admin-login {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.admin-login h1 {
+    text-align: center;
+    color: #ff6b00;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.admin-login button {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff6b00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.admin-login button:hover {
+    background-color: #e05d00;
+}
+
+/* Admin Dashboard */
+.admin-dashboard {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.admin-header {
+    background-color: #ff6b00;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-header h1 {
+    font-size: 1.5rem;
+}
+
+#logout-btn {
+    background: none;
+    border: 1px solid white;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#logout-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.admin-nav {
+    display: flex;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #eee;
+}
+
+.nav-btn {
+    padding: 15px 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: #555;
+    border-bottom: 3px solid transparent;
+}
+
+.nav-btn:hover {
+    color: #ff6b00;
+    background-color: #f0f0f0;
+}
+
+.nav-btn.active {
+    color: #ff6b00;
+    border-bottom-color: #ff6b00;
+}
+
+/* Admin Sections */
+.admin-section {
+    padding: 20px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.section-header h2 {
+    color: #333;
+}
+
+.section-header button {
+    padding: 8px 15px;
+    background-color: #ff6b00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.section-header button:hover {
+    background-color: #e05d00;
+}
+
+.back-to-restaurants,
+.back-to-orders {
+    background: none;
+    border: none;
+    color: #ff6b00;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.back-to-restaurants:hover,
+.back-to-orders:hover {
+    text-decoration: underline;
+}
+
+/* Restaurant Cards */
+.admin-restaurant-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.restaurant-info h3 {
+    color: #ff6b00;
+    margin-bottom: 5px;
+}
+
+.restaurant-info p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.restaurant-actions button {
+    padding: 8px 15px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-restaurant {
+    background-color: #3498db;
+    color: white;
+}
+
+.edit-restaurant:hover {
+    background-color: #2980b9;
+}
+
+.view-menu {
+    background-color: #27ae60;
+    color: white;
+}
+
+.view-menu:hover {
+    background-color: #219653;
+}
+
+/* Forms */
+.restaurant-form,
+.menu-item-form,
+.promo-form {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.restaurant-form h3,
+.menu-item-form h3,
+.promo-form h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.restaurant-form label,
+.menu-item-form label,
+.promo-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.restaurant-form input,
+.menu-item-form input,
+.menu-item-form textarea,
+.promo-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.menu-item-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.restaurant-form button,
+.menu-item-form button,
+.promo-form button {
+    padding: 10px 15px;
+    margin-right: 10px;
+    background-color: #ff6b00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.restaurant-form button:hover,
+.menu-item-form button:hover,
+.promo-form button:hover {
+    background-color: #e05d00;
+}
+
+.cancel-btn {
+    background-color: #95a5a6 !important;
+}
+
+.cancel-btn:hover {
+    background-color: #7f8c8d !important;
+}
+
+/* Menu Items */
+.admin-menu-items-list {
+    margin-top: 20px;
+}
+
+.admin-menu-item {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-item-info h4 {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.menu-item-info p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.edit-menu-item {
+    padding: 8px 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-menu-item:hover {
+    background-color: #2980b9;
+}
+
+/* Promo Codes */
+.admin-promo-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.promo-info h3 {
+    color: #9b59b6;
+    margin-bottom: 5px;
+}
+
+.promo-info p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.edit-promo {
+    padding: 8px 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-promo:hover {
+    background-color: #2980b9;
+}
+
+/* Orders */
+.admin-order-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.order-info h3 {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.order-info p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.view-order {
+    padding: 8px 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.view-order:hover {
+    background-color: #2980b9;
+}
+
+.order-detail {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.order-detail h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.order-detail p {
+    margin-bottom: 10px;
+}
+
+.order-items {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.order-items h4 {
+    margin-bottom: 10px;
+}
+
+.order-items ul {
+    list-style-type: none;
+}
+
+.order-items li {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.order-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.order-actions select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    flex: 1;
+    margin-right: 10px;
+}
+
+#update-order-status {
+    padding: 8px 15px;
+    background-color: #ff6b00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#update-order-status:hover {
+    background-color: #e05d00;
+}
+
+/* Settings */
+#settings-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+#settings-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#generate-api-key {
+    margin-top: -15px;
+    margin-bottom: 15px;
+    padding: 5px 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+#generate-api-key:hover {
+    background-color: #2980b9;
+}
+
+#settings-form button[type="submit"] {
+    padding: 10px 15px;
+    background-color: #ff6b00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#settings-form button[type="submit"]:hover {
+    background-color: #e05d00;
+}
