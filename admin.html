@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tayyor24 - Admin Panel</title>
+    <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Admin Login -->
+        <div class="admin-login" id="admin-login">
+            <h1>Tayyor24 Admin</h1>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="admin-username">Foydalanuvchi nomi</label>
+                    <input type="text" id="admin-username" required>
+                </div>
+                <div class="form-group">
+                    <label for="admin-password">Parol</label>
+                    <input type="password" id="admin-password" required>
+                </div>
+                <button type="submit">Kirish</button>
+            </form>
+        </div>
+
+        <!-- Admin Dashboard -->
+        <div class="admin-dashboard" id="admin-dashboard" style="display: none;">
+            <header class="admin-header">
+                <h1>Tayyor24 Admin Panel</h1>
+                <button id="logout-btn">Chiqish</button>
+            </header>
+
+            <div class="admin-nav">
+                <button class="nav-btn active" data-section="restaurants">Oshxonalar</button>
+                <button class="nav-btn" data-section="promo-codes">Promo kodlar</button>
+                <button class="nav-btn" data-section="orders">Buyurtmalar</button>
+                <button class="nav-btn" data-section="settings">Sozlamalar</button>
+            </div>
+
+            <!-- Restaurants Section -->
+            <section class="admin-section" id="restaurants-section">
+                <div class="section-header">
+                    <h2>Oshxonalar boshqaruvi</h2>
+                    <button id="add-restaurant-btn">Yangi oshxona qo'shish</button>
+                </div>
+
+                <div class="restaurant-form" id="restaurant-form" style="display: none;">
+                    <h3>Yangi oshxona</h3>
+                    <form id="new-restaurant-form">
+                        <div class="form-group">
+                            <label for="restaurant-name">Oshxona nomi</label>
+                            <input type="text" id="restaurant-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="restaurant-description">Tavsif</label>
+                            <input type="text" id="restaurant-description">
+                        </div>
+                        <div class="form-group">
+                            <label for="restaurant-delivery-price">Yetkazish narxi (UZS)</label>
+                            <input type="number" id="restaurant-delivery-price" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="restaurant-location">Lokatsiya</label>
+                            <input type="text" id="restaurant-location">
+                        </div>
+                        <div class="form-group">
+                            <label for="restaurant-image">Oshxona rasmi (URL)</label>
+                            <input type="text" id="restaurant-image">
+                        </div>
+                        <button type="submit">Saqlash</button>
+                        <button type="button" class="cancel-btn">Bekor qilish</button>
+                    </form>
+                </div>
+
+                <div class="restaurant-list" id="admin-restaurant-list">
+                    <!-- Dynamically populated -->
+                </div>
+            </section>
+
+            <!-- Menu Items Section (for selected restaurant) -->
+            <section class="admin-section" id="menu-items-section" style="display: none;">
+                <div class="section-header">
+                    <h2 id="menu-items-title">Oshxona menyusi</h2>
+                    <button class="back-to-restaurants">← Oshxonalarga qaytish</button>
+                    <button id="add-menu-item-btn">Yangi taom qo'shish</button>
+                </div>
+
+                <div class="menu-item-form" id="menu-item-form" style="display: none;">
+                    <h3>Yangi taom</h3>
+                    <form id="new-menu-item-form">
+                        <div class="form-group">
+                            <label for="item-name">Taom nomi</label>
+                            <input type="text" id="item-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="item-description">Tavsif</label>
+                            <textarea id="item-description"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="item-price">Narxi (UZS)</label>
+                            <input type="number" id="item-price" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="item-category">Kategoriya</label>
+                            <input type="text" id="item-category">
+                        </div>
+                        <div class="form-group">
+                            <label for="item-image">Rasm (URL)</label>
+                            <input type="text" id="item-image">
+                        </div>
+                        <div class="form-group">
+                            <label>Variantlar (har birini yangi qatordan kiriting)</label>
+                            <textarea id="item-options"></textarea>
+                        </div>
+                        <button type="submit">Saqlash</button>
+                        <button type="button" class="cancel-btn">Bekor qilish</button>
+                    </form>
+                </div>
+
+                <div class="menu-items-list" id="admin-menu-items-list">
+                    <!-- Dynamically populated -->
+                </div>
+            </section>
+
+            <!-- Promo Codes Section -->
+            <section class="admin-section" id="promo-codes-section" style="display: none;">
+                <div class="section-header">
+                    <h2>Promo kodlar</h2>
+                    <button id="add-promo-btn">Yangi promo kod qo'shish</button>
+                </div>
+
+                <div class="promo-form" id="promo-form" style="display: none;">
+                    <h3>Yangi promo kod</h3>
+                    <form id="new-promo-form">
+                        <div class="form-group">
+                            <label for="promo-code">Promo kod</label>
+                            <input type="text" id="promo-code" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="promo-discount">Chegirma miqdori (UZS)</label>
+                            <input type="number" id="promo-discount" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="promo-min-order">Minimal buyurtma (UZS)</label>
+                            <input type="number" id="promo-min-order">
+                        </div>
+                        <div class="form-group">
+                            <label for="promo-expiry">Amal qilish muddati</label>
+                            <input type="date" id="promo-expiry">
+                        </div>
+                        <button type="submit">Saqlash</button>
+                        <button type="button" class="cancel-btn">Bekor qilish</button>
+                    </form>
+                </div>
+
+                <div class="promo-list" id="admin-promo-list">
+                    <!-- Dynamically populated -->
+                </div>
+            </section>
+
+            <!-- Orders Section -->
+            <section class="admin-section" id="orders-section" style="display: none;">
+                <div class="section-header">
+                    <h2>Buyurtmalar</h2>
+                    <div class="order-filters">
+                        <select id="order-status-filter">
+                            <option value="all">Barchasi</option>
+                            <option value="new">Yangi</option>
+                            <option value="preparing">Tayyorlanmoqda</option>
+                            <option value="delivering">Yetkazilmoqda</option>
+                            <option value="completed">Yakunlangan</option>
+                            <option value="cancelled">Bekor qilingan</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="orders-list" id="admin-orders-list">
+                    <!-- Dynamically populated -->
+                </div>
+            </section>
+
+            <!-- Order Details -->
+            <section class="admin-section" id="order-details-section" style="display: none;">
+                <div class="section-header">
+                    <h2>Buyurtma tafsilotlari</h2>
+                    <button class="back-to-orders">← Buyurtmalarga qaytish</button>
+                </div>
+
+                <div class="order-details" id="admin-order-details">
+                    <!-- Dynamically populated -->
+                </div>
+
+                <div class="order-actions">
+                    <select id="order-status-change">
+                        <option value="new">Yangi</option>
+                        <option value="preparing">Tayyorlanmoqda</option>
+                        <option value="delivering">Yetkazilmoqda</option>
+                        <option value="completed">Yakunlangan</option>
+                        <option value="cancelled">Bekor qilingan</option>
+                    </select>
+                    <button id="update-order-status">Statusni yangilash</button>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section class="admin-section" id="settings-section" style="display: none;">
+                <div class="section-header">
+                    <h2>Sozlamalar</h2>
+                </div>
+
+                <form id="settings-form">
+                    <div class="form-group">
+                        <label for="api-key">API kalit</label>
+                        <input type="text" id="api-key" readonly>
+                        <button type="button" id="generate-api-key">Yangi kalit yaratish</button>
+                    </div>
+                    <div class="form-group">
+                        <label for="delivery-time">O'rtacha yetkazish vaqti (daqiqa)</label>
+                        <input type="number" id="delivery-time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="admin-password-change">Yangi parol</label>
+                        <input type="password" id="admin-password-change">
+                    </div>
+                    <div class="form-group">
+                        <label for="admin-password-confirm">Parolni tasdiqlang</label>
+                        <input type="password" id="admin-password-confirm">
+                    </div>
+                    <button type="submit">Sozlamalarni saqlash</button>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/admin.js"></script>
+</body>
+</html>

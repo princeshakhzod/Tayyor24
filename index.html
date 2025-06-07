@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tayyor24 - Fast Food Delivery</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div class="loading-screen">
+        <div class="loading-animation">
+            <h1>Tayyor24</h1>
+        </div>
+    </div>
+
+    <!-- Main App Container -->
+    <div class="app-container" style="display: none;">
+        <!-- Header -->
+        <header class="app-header">
+            <button class="back-btn" style="display: none;">←</button>
+            <h1>Tayyor24_bot</h1>
+        </header>
+
+        <!-- Delivery Address -->
+        <section class="delivery-address">
+            <p>Yetkazish manzili</p>
+            <p id="user-address">Manzil tanlanmagan</p>
+        </section>
+
+        <!-- Restaurant List -->
+        <section class="restaurant-list" id="restaurant-list">
+            <h2>Mahsulotlarni qidirish</h2>
+            <!-- Dynamically populated -->
+        </section>
+
+        <!-- Restaurant Menu -->
+        <section class="restaurant-menu" id="restaurant-menu" style="display: none;">
+            <div class="menu-header">
+                <h2 id="restaurant-name"></h2>
+                <p id="restaurant-description"></p>
+                <p>Yetkazish narxi: <span id="delivery-price">10 000 UZS</span></p>
+            </div>
+            <div class="menu-items" id="menu-items">
+                <!-- Dynamically populated -->
+            </div>
+        </section>
+
+        <!-- Food Item Details -->
+        <section class="food-details" id="food-details" style="display: none;">
+            <div class="food-header">
+                <h2 id="food-name"></h2>
+                <p id="food-price"></p>
+            </div>
+            <div class="food-options" id="food-options">
+                <!-- Dynamically populated -->
+            </div>
+            <button class="add-to-cart">Savatchaga qo'shish</button>
+        </section>
+
+        <!-- Shopping Cart -->
+        <section class="shopping-cart" id="shopping-cart" style="display: none;">
+            <h2>Savatcha</h2>
+            <div class="cart-header">
+                <label><input type="checkbox" id="select-all"> Hammasini tanlash</label>
+                <span id="item-count">0 Mahsulotlar</span>
+            </div>
+            <div class="cart-items" id="cart-items">
+                <!-- Dynamically populated -->
+            </div>
+            <div class="cart-summary">
+                <div class="promo-code">
+                    <input type="text" id="promo-input" placeholder="Promo kod">
+                    <button id="apply-promo">Qo'llash</button>
+                </div>
+                <div class="discount" id="discount-section" style="display: none;">
+                    <p>Chegirma: <span id="discount-amount">0 UZS</span></p>
+                </div>
+                <p class="total">Jami: <span id="total-amount">0 UZS</span></p>
+                <button class="checkout-btn">Buyurtma berish</button>
+            </div>
+        </section>
+
+        <!-- Checkout Form -->
+        <section class="checkout-form" id="checkout-form" style="display: none;">
+            <h2>Buyurtma ma'lumotlari</h2>
+            <form id="order-form">
+                <div class="form-group">
+                    <label for="name">Ismingiz</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Telefon raqamingiz</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Yetkazish manzili</label>
+                    <textarea id="address" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="notes">Qo'shimcha izohlar</label>
+                    <textarea id="notes"></textarea>
+                </div>
+                <div class="payment-methods">
+                    <h3>To'lov usuli</h3>
+                    <label>
+                        <input type="radio" name="payment" value="cash" checked> Naqd
+                    </label>
+                    <label>
+                        <input type="radio" name="payment" value="card"> Karta orqali
+                    </label>
+                </div>
+                <button type="submit" class="submit-order">Buyurtmani tasdiqlash</button>
+            </form>
+        </section>
+
+        <!-- Order Confirmation -->
+        <section class="order-confirmation" id="order-confirmation" style="display: none;">
+            <div class="confirmation-icon">✓</div>
+            <h2>Buyurtmangiz qabul qilindi!</h2>
+            <p>Buyurtma raqami: <span id="order-number"></span></p>
+            <p>Yetkazish vaqti: <span id="delivery-time"></span></p>
+            <button class="return-home">Asosiy menyuga qaytish</button>
+        </section>
+    </div>
+
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

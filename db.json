@@ -1,0 +1,50 @@
+{
+  "settings": {
+    "api_key": "tayyor24_apikey_123456",
+    "delivery_time": 45,
+    "admin_password": "hashed_password_here"
+  },
+  "restaurants": [
+    {
+      "id": 1,
+      "name": "SHIRMOY NON oshxonasi",
+      "description": "Efes kebab fast food",
+      "delivery_price": 10000,
+      "location": "Toshkent shahar, Yunusobod tumani",
+      "image": "",
+      "menu": [
+        {
+          "id": 1,
+          "name": "Hot dog Efes kebab",
+          "description": "hotdog efes kebab",
+          "price": 20000,
+          "category": "Fast Food",
+          "image": "",
+          "options": [
+            "hotdog katta efes kebab",
+            "hotdog kichkina efes kebab"
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Zo'rPatir",
+          "description": "Zo'rPatir mahsuloti",
+          "price": 78000,
+          "category": "Milliy taom",
+          "image": "",
+          "options": []
+        }
+      ]
+    }
+  ],
+  "promo_codes": [
+    {
+      "code": "Promo25",
+      "discount": 15000,
+      "min_order": 50000,
+      "expiry": "2025-12-31",
+      "active": true
+    }
+  ],
+  "orders": []
+}
